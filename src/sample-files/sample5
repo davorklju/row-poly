@@ -1,0 +1,3 @@
+let replaceX o a = {x = a| o//x}
+in
+  replaceX

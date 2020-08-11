@@ -1,0 +1,13 @@
+let remX r = r // x
+in
+
+let sqr = lam x. x * x 
+in
+let dist x y = sqr x + sqr y
+in
+let addDist r = {dist = dist r.x r.y| r}
+in
+  <a=3> match
+    | <a=x> -> 2
+    | _     -> 0
+  end

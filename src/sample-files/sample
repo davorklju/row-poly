@@ -1,0 +1,34 @@
+let const = lam a. lam b. a
+in
+
+let catch = 
+      lam z. lam f. lam r. 
+        suc in r ?  f 
+                 : (const z)
+in
+
+let try   = lam x. 
+                if x <= 2 then 
+                  <suc=x> 
+                else
+                  <fail=()> 
+in
+
+let example1 =  catch 0 (lam x. x + 2) (try 2)
+in
+
+let record = {x=try|y=catch|z=2| w = lam x . x+2}
+in
+
+let applyRec = lam r . r.y 0 r.w (r.x r.z)
+in
+
+let example2 =
+  if applyRec record <= 3 then
+    {x = <l=2>}
+  else
+    {x = <m=false>}
+
+in
+
+  example2

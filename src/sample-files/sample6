@@ -1,0 +1,12 @@
+let swap o = { l = o//l.l
+             | l = o//l//l.l
+             | l = match o | {l=x} -> x end
+             | o // l // l // l
+             }
+in      
+
+let compose g f x = g (f x)
+
+in
+  compose swap swap
+

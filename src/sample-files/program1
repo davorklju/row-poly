@@ -1,0 +1,16 @@
+
+type maybe a = < some:a | none: unit > 
+
+type hasX r a = {x:a|r}
+
+
+let sqr x = x * x
+
+
+let foobar x =
+    match x
+      | {l=p} -> sqr p
+      | _     -> 0
+    end
+
+let main = sqr 4

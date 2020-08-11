@@ -1,0 +1,5 @@
+let remX r = r // x in
+let sqr x  = x * x  in
+let addDist r = {dist = sqr r.x + sqr r.y | r}
+in
+  addDist {x = 3 | y = 4 | z = 10 }

@@ -1,0 +1,9 @@
+let qqq r = {x=2 | r}
+in
+let foo o =
+    match o
+      | {y=true|x=x} -> x
+      | {y=false}    -> 0
+      | _            -> -1
+in
+  lam r. foo (qqq (r//y))
